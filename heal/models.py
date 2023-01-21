@@ -11,7 +11,7 @@ class Users(models.Model):
     password = models.CharField(max_length=200)
     user_first_name = models.CharField(max_length=200,default='unknown')
     user_last_name = models.CharField(max_length=200,default='unknown')
-    user_Identity = models.BigIntegerField(default=0,validators=[RegexValidator(r'^\d{14}$', 'Enter a valid 14 digit number.')])
+    user_Identity = models.BigIntegerField(validators=[RegexValidator(r'^\d{14}$', 'Enter a valid 14 digit account number.')])
 
 #Create class Accounts
 
@@ -24,7 +24,6 @@ class Accounts(models.Model):
 
 #Create class InsuranceProducts
 class InsuranceProducts(models.Model):
-    user = models.ForeignKey(Users, on_delete=models.CASCADE,default=1)
     product_name = models.CharField(max_length=200,default='unknown')
     price = models.DecimalField(max_digits=10, decimal_places=2)
     coverage = models.CharField(max_length=200)

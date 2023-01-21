@@ -1,0 +1,16 @@
+<table>
+    <thead>
+      <tr>
+        <th>Coverage</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for insuranceproduct in insuranceproducts %}
+      <tr>
+        <td>{{ insuranceproduct.coverage }}</td>
+        <td>{{ insuranceproduct.price }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
