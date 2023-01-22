@@ -63,12 +63,14 @@ def account_create(request):
     return render(request, 'heal/account_form.html', {'form': form})
 
 #Create recive
-def recive_create(request):
+def product_buy(request, product_id):
     if request.method == 'POST':
         form = ReciveForm(request.POST)
         if form.is_valid():
-            recive = form.save()
-            return redirect('recives_view')
+            recive = form.save(commit=False)
+            recive.insurance_product_id = product_id
+            recive.save()
+            return redirect('product_view')
     else:
         form = ReciveForm()
     return render(request, 'heal/recive_form.html', {'form': form})

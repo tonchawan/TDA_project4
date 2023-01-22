@@ -12,7 +12,7 @@ urlpatterns = [
     path('product/<int:pk>', views.product_detail, name='product_detail'),
     path('recive/<int:pk>', views.recive_detail, name='recive_detail'),
 
-    path('recive/new', views.recive_create, name='recive_form'),
+    path('product/<int:product_id>/buy', views.product_buy, name='product_buy'),
     path('account/new', views.account_create, name='account_form'),
     
     path('account/<int:pk>/update', views.account_update, name='account_update'),
