@@ -1,16 +1,8 @@
-<table>
-    <thead>
-      <tr>
-        <th>Recive Date</th>
-        <th>Recive Amount</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for recive in recives %}
-      <tr>
-        <td>{{ recive.recive_date }}</td>
-        <td>{{ recive.recive_amount }}</td>
-      </tr>
-      {% endfor %}
-    </tbody>
-  </table>
+<h2>Recives <a href="">(+)</a></h2>
+<ul>
+  {% for recive in recives %}
+  <li>
+    <a href="">{{ recive.recive_number }}</a>
+  </li>
+  {% endfor %}
+</ul>

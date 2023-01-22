@@ -1,16 +1,8 @@
-<table>
-    <thead>
-      <tr>
-        <th>Account Name</th>
-        <th>Account Number</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for account in accounts %}
-      <tr>
-        <td>{{ account.account_name }}</td>
-        <td>{{ account.account_number }}</td>
-      </tr>
-      {% endfor %}
-    </tbody>
-  </table>
+<h2>Account <a href="">(+)</a></h2>
+<ul>
+  {% for account in accounts %}
+  <li>
+    <a href="">{{ account.account_name}}, {{ account.user }}</a>
+  </li>
+  {% endfor %}
+</ul>

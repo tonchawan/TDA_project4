@@ -29,6 +29,31 @@ def recives_view(request):
     context = {'recives': recives}
     return render(request, 'heal/recives.html', context)
 
+# Show a User detail
+def user_detail(request, pk):
+    user = Users.objects.get(id=pk)
+    return render(request, 'heal/user_detail.html', {'user': user})
+
+# Show a Account detail
+def account_detail(request, pk):
+    account = Accounts.objects.get(id=pk)
+    return render(request, 'heal/account_detail.html', {'account':account })
+
+# Show a product detail
+def product_detail(request, pk):
+    product = InsuranceProducts.objects.get(id=pk)
+    return render(request, 'heal/product_detail.html', {'product': product})
+
+# Show a recive detail
+def recive_detail(request, pk):
+    recive = Recives.objects.get(id=pk)
+    return render(request, 'heal/recive_detail.html', {'recive':recive })
+
+
+
+
+
+
 # Create Account
 def account_create(request):
     if request.method == 'POST':
@@ -51,3 +76,26 @@ def recive_create(request):
         form = ReciveForm()
     return render(request, 'heal/recive_form.html', {'form': form})
 
+# Edit Account 
+def account_update(request, pk ):
+    account = Accounts.objects.get(id=pk)
+    if request.method == "POST":
+        form = AccountForm(request.POST, instance=account)
+        if form.is_valid():
+            account = form.save()
+            return redirect('accounts_view', pk =account.pk)
+        else:
+            form = ReciveForm()
+        return render(request, 'heal/account_form.html', {'form':form})
+
+# Edit Recive
+def recive_update(request, pk ):
+    recive = Recives.objects.get(id=pk)
+    if request.method == "POST":
+        form = ReciveForm(request.POST, instance=recive)
+        if form.is_valid():
+            recive = form.save()
+            return redirect('recives_view', pk =recive.pk)
+        else:
+            form = ReciveForm()
+        return render(request, 'heal/recive_form.html', {'form':form})

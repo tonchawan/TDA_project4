@@ -1,3 +1,4 @@
+import uuid
 from django.db import models
 from django.core.validators import RegexValidator
 
@@ -30,6 +31,7 @@ class InsuranceProducts(models.Model):
 
 #Create class Recives
 class Recives(models.Model):
+    recive_number = models.CharField(max_length=36, default=uuid.uuid4, editable=False)
     account = models.ForeignKey(Accounts, on_delete=models.CASCADE)
     insurance_product = models.ForeignKey(InsuranceProducts, on_delete=models.CASCADE)
     recive_date = models.DateTimeField()
