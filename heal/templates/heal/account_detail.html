@@ -2,11 +2,10 @@
 
 {% block content %}
 
-<h1>Account Details</h1>
-<p>Account Number: {{ account.account_number }}</p>
-<p>Account Type: {{ account.account_type }}</p>
-<p>Balance: {{ account.balance }}</p>
-<p>User: {{ account.user.name }}</p>
+<h2>{{account.account_name}}</h2>
+<h4>Account Number: {{account.account_number}}</h4>
+<h4>Balance: {{account.balance}}</h4>
+<h4>User Name: {{account.user_name}}</h4>
 
 
 {% endblock %}

@@ -18,5 +18,9 @@ urlpatterns = [
     path('account/<int:pk>/update', views.account_update, name='account_update'),
     path('recive/<int:pk>/update', views.recive_update, name='recive_update'),
 
+   path('account/<int:pk>/delete', views.account_delete, name='account_delete'),
+   path('recive/<int:pk>/delete', views.recive_delete, name='recive_delete'), 
+
+
 
 ]   

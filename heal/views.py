@@ -37,11 +37,9 @@ def user_detail(request, pk):
 
 # Show a Account detail
 def account_detail(request, pk):
-    account = Accounts.objects.filter(id=pk).first()
-    if account:
-        return render(request, 'heal/account_detail.html', {'account':account })
-    else:
-        return redirect('accounts_view')
+    account = Accounts.objects.all()
+    return render(request, 'heal/account_detail.html', {'account':account})
+
 # Show a product detail
 def product_detail(request, pk):
     product = InsuranceProducts.objects.get(id=pk)
@@ -51,10 +49,6 @@ def product_detail(request, pk):
 def recive_detail(request, pk):
     recive = Recives.objects.get(id=pk)
     return render(request, 'heal/recive_detail.html', {'recive':recive })
-
-
-
-
 
 
 # Create Account
@@ -103,3 +97,15 @@ def recive_update(request, pk ):
         else:
             form = ReciveForm()
         return render(request, 'heal/recive_form.html', {'form':form})
+
+
+# Deleate Account
+def account_delete(request, pk):
+    Accounts.objects.get(id=pk).delete()
+    return redirect('users_view')
+
+# Deleate Recive
+def recive_delete(request, pk):
+    Recives.objects.get(id=pk).delete()
+    return redirect('heal/recive_view')
+

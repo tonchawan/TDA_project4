@@ -1,8 +1,8 @@
-<h2>Product <a href="">(+)</a></h2>
+<h2>Product </h2>
 <ul>
   {% for insuranceproduct in insuranceproducts %}
   <li>
-    <a href="">{{ insuranceproduct.product_name }}</a>
+    <a href="{% url 'product_detail' pk=insuranceproduct.pk %}">{{ insuranceproduct.product_name }}</a>
   </li>
   {% endfor %}
 </ul>

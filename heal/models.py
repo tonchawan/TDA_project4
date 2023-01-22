@@ -17,8 +17,8 @@ class Users(models.Model):
 #Create class Accounts
 
 class Accounts(models.Model):
-    user_namey = models.ForeignKey(Users, on_delete=models.CASCADE)
     account_name = models.CharField(max_length=200)
+    user_name = models.ForeignKey(Users, on_delete=models.CASCADE)
     account_number = models.BigIntegerField(validators=[RegexValidator(r'^\d{10}$', 'Enter a valid 10 digit account number.')])
     balance = models.DecimalField(max_digits=15, decimal_places=2)
 

@@ -2,7 +2,7 @@
 <ul>
   {% for account in accounts %}
   <li>
-    <a href="">{{ account.account_name}}, {{ account.user }}</a>
+    <a href="{% url 'account_detail' pk=account.pk %}">{{ account.account_name}}, {{ account.user_name }}</a>
   </li>
   {% endfor %}
 </ul>

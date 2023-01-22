@@ -3,15 +3,17 @@
 {% block content %}
 
 <h2>{{ user.name }} <a href="">(edit)</a></h2>
-<h4>{{ user.email }}</h4>
+<h4>Email: {{ user.email }}</h4>
+<h4>First Name: {{ user.user_first_name }}</h4>
+<h4>Last Name: {{ user.user_last_name }}</h4>
+<h4>Identity: {{ user.user_Identity }}</h4>
 
-<h3>Accounts <a href="">(+)</a></h3>
+<h3>Accounts</h3>
 <ul>
-  {% for account in user.accounts.all %}
+  {% for account in user.accounts_set.all %}
   <li>
-    <a href="{% url 'account_detail' pk=account.pk %}">
-        {{ account.account_name}}-{{ account.account_number }}
-    </a>
+    <a href="{% url 'account_detail' pk=account.pk %}">{{ account.account_name}}, {{ account.account_number}}</a>
+    <a href="{% url 'account_delete' pk=account.pk %}">DELETE</a>
   </li>
   {% endfor %}
 </ul>
