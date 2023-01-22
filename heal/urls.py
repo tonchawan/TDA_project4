@@ -10,7 +10,7 @@ urlpatterns = [
     path('user/<int:pk>', views.user_detail, name='user_detail'),
     path('account/<int:pk>', views.account_detail, name='account_detail'),
     path('product/<int:pk>', views.product_detail, name='product_detail'),
-    path('recives/<int:pk>', views.recive_detail, name='recive_detail'),
+    path('recive/<int:pk>', views.recive_detail, name='recive_detail'),
 
     path('recive/new', views.recive_create, name='recive_form'),
     path('account/new', views.account_create, name='account_form'),

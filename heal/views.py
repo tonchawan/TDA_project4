@@ -29,16 +29,19 @@ def recives_view(request):
     context = {'recives': recives}
     return render(request, 'heal/recives.html', context)
 
+
 # Show a User detail
 def user_detail(request, pk):
     user = Users.objects.get(id=pk)
-    return render(request, 'heal/user_detail.html', {'user': user})
+    return render(request, 'heal/user_detail.html', {'user':user})
 
 # Show a Account detail
 def account_detail(request, pk):
-    account = Accounts.objects.get(id=pk)
-    return render(request, 'heal/account_detail.html', {'account':account })
-
+    account = Accounts.objects.filter(id=pk).first()
+    if account:
+        return render(request, 'heal/account_detail.html', {'account':account })
+    else:
+        return redirect('accounts_view')
 # Show a product detail
 def product_detail(request, pk):
     product = InsuranceProducts.objects.get(id=pk)
@@ -75,6 +78,7 @@ def recive_create(request):
     else:
         form = ReciveForm()
     return render(request, 'heal/recive_form.html', {'form': form})
+
 
 # Edit Account 
 def account_update(request, pk ):

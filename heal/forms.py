@@ -5,7 +5,7 @@ from .models import Accounts, Recives
 class AccountForm(forms.ModelForm):
     class Meta:
         model = Accounts
-        fields = ('user', 'account_name', 'account_number', 'balance')
+        fields = ('user_name', 'account_name', 'account_number', 'balance')
 
 # Create new Recive
 class ReciveForm(forms.ModelForm):

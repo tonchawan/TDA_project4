@@ -1,0 +1,12 @@
+{% extends 'heal/base.html' %} 
+
+{% block content %}
+
+<h1>Account Details</h1>
+<p>Account Number: {{ account.account_number }}</p>
+<p>Account Type: {{ account.account_type }}</p>
+<p>Balance: {{ account.balance }}</p>
+<p>User: {{ account.user.name }}</p>
+
+
+{% endblock %}
