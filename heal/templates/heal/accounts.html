@@ -1,3 +1,7 @@
+{% extends 'heal/base.html' %} 
+
+{% block content %}
+
 <h2>Account <a href="">(+)</a></h2>
 <ul>
   {% for account in accounts %}
@@ -6,3 +10,5 @@
   </li>
   {% endfor %}
 </ul>
+
+{% endblock %}

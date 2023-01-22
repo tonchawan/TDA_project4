@@ -1,3 +1,7 @@
+{% extends 'heal/base.html' %}
+
+{% block content %}
+
 <h2>Product </h2>
 <ul>
   {% for insuranceproduct in insuranceproducts %}
@@ -6,3 +10,5 @@
   </li>
   {% endfor %}
 </ul>
+
+{% endblock %}
