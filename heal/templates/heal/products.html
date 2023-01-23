@@ -3,9 +3,12 @@
 {% block content %}
 
 <h2>Product </h2>
+
+<img src="{{ insuranceproduct.photo_url }}" alt="" class="product-photo" />
 <ul>
   {% for insuranceproduct in insuranceproducts %}
   <li>
+    
     <a href="{% url 'product_detail' pk=insuranceproduct.pk %}">{{ insuranceproduct.product_name }}</a>
   </li>
   {% endfor %}

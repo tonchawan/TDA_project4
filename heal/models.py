@@ -1,4 +1,5 @@
 import uuid
+from django.utils import timezone
 from django.db import models
 from django.core.validators import RegexValidator
 
@@ -28,9 +29,11 @@ class InsuranceProducts(models.Model):
     product_name = models.CharField(max_length=200,default='unknown')
     price = models.DecimalField(max_digits=10, decimal_places=2)
     coverage = models.CharField(max_length=200)
+    photo_url = models.TextField(default='unknown')
 
 #Create class Recives
 class Recives(models.Model):
+    created_at = models.DateTimeField(default=timezone.now)
     recive_number = models.CharField(max_length=36, default=uuid.uuid4, editable=False)
     account = models.ForeignKey(Accounts, on_delete=models.CASCADE)
     insurance_product = models.ForeignKey(InsuranceProducts, on_delete=models.CASCADE)

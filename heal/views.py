@@ -74,7 +74,6 @@ def product_buy(request, product_id):
         form = ReciveForm()
     return render(request, 'heal/recive_form.html', {'form': form})
 
-
 # Edit Account 
 def account_update(request, pk ):
     account = Accounts.objects.get(id=pk)

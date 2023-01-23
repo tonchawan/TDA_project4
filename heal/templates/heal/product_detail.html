@@ -3,6 +3,7 @@
 {% block content %}
 
 <h1>Product detail</h1>
+<img src="{{ product.photo_url }}" alt="" class="product-photo-detail" />
 <p>Product name: {{ product.product_name }}</p>
 <p>Product Detail: {{ product.coverage }}</p>
 <p>Price: {{ product.price }}</p>
@@ -10,4 +11,5 @@
     <a href="{% url 'product_buy' product_id=product.pk %}">Buy</a>
 </button>
     
+
 {% endblock %}
