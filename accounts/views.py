@@ -5,7 +5,6 @@ from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
-@login_required
 def sign_up(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)

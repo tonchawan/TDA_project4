@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect
-from .models import Users, Accounts, InsuranceProducts, Recives
+from .models import Accounts, InsuranceProducts, Recives, Users
 from .forms import AccountForm, ReciveForm
-
 
 # Create your views here.
 
