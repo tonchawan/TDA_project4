@@ -62,6 +62,18 @@ nav {
     position: relative; /* add position relative */
 }
 
+.product-photo{
+    max-width: 60;
+    max-height: 20;
+}
+
+.product-photo-detail{
+    max-width: 60;
+    max-height: 20;
+}
+
+
+
 footer {
     background-color: #222;
     color: #fff;
@@ -95,7 +107,7 @@ footer {
 
   
 
-@media (max-width: 768px){
+@media (max-width: 800px){
     nav{
         flex-direction: column;
     }
