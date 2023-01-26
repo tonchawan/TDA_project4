@@ -1,5 +1,7 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
-from .models import Accounts, InsuranceProducts, Recives, Users
+from .models import Accounts, InsuranceProducts, Recives
+from accounts.models import User
 from .forms import AccountForm, ReciveForm
 
 
@@ -7,8 +9,12 @@ from .forms import AccountForm, ReciveForm
 
 # Show all User data
 def users_view(request):
-    users = Users.objects.all()
-    context = {'users': users}
+    # users = Users.objects.all()
+    # context = {'users': users}
+    # return render(request, 'heal/users_view.html', context)
+    # /////////////
+    users = User.objects.all()
+    context = {'users': user}
     return render(request, 'heal/users_view.html', context)
 
 # Show all Accounts data
@@ -35,7 +41,7 @@ def recives_view(request):
 # Show a User detail
 
 def user_detail(request, pk):
-    user = Users.objects.get(id=pk)
+    user = User.objects.get(id=pk)
     return render(request, 'heal/user_detail.html', {'user':user})
 
 # Show a Account detail
@@ -69,7 +75,7 @@ def account_create(request):
     return render(request, 'heal/account_form.html', {'form': form})
 
 #Create recive
-
+# @login_required
 def product_buy(request, product_id):
     if request.method == 'POST':
         form = ReciveForm(request.POST)

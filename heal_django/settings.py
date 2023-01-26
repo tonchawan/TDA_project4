@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'heal',
     'accounts',
-    
+    'rest_framework',
+    'rest_framework.authtoken'
 
 ]
 
@@ -72,10 +73,17 @@ TEMPLATES = [
 ]
 
 REST_FRAMEWORK = {
+     'NON_FIELD_ERRORS_KEY':"error",
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+        # "rest_framework_simplejwt.authentication.JWTAuthentication",
+        # 'rest_framework_jwt.authentication.JSONWebTokenAuthentication', #decode
+    ),
     # Use Django's standard `django.contrib.auth` permissions,
     # or allow read-only access for unauthenticated users.
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+        # 'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
     ]
 }
 
@@ -86,14 +94,23 @@ WSGI_APPLICATION = 'heal_django.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.postgresql',
+    #     'NAME': 'tonchawan/heal',
+    #     'USER': 'tonchawan',
+    #     'PASSWORD': 'v2_3yB6J_XkbMfmhRLY4fmJ2VEzqKWUB',
+    #     'HOST': 'db.bit.io',
+    #     'PORT': '5432',
+    # }
+
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'tonchawan/heal',
-        'USER': 'tonchawan',
-        'PASSWORD': 'v2_3yB6J_XkbMfmhRLY4fmJ2VEzqKWUB',
-        'HOST': 'db.bit.io',
-        'PORT': '5432',
+        'NAME': 'heal',
+        'USER': 'healuser',
+        'PASSWORD': 'heal',
+        'HOST': 'localhost'
     }
+
 }
 
 
@@ -115,6 +132,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTH_USER_MODEL = 'accounts.User'
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
