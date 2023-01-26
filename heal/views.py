@@ -14,7 +14,7 @@ def users_view(request):
     # return render(request, 'heal/users_view.html', context)
     # /////////////
     users = User.objects.all()
-    context = {'users': user}
+    context = {'users': users}
     return render(request, 'heal/users_view.html', context)
 
 # Show all Accounts data

@@ -23,7 +23,8 @@ class Accounts(models.Model):
     user_name = models.ForeignKey(User, on_delete=models.CASCADE, related_name = "accounts")
     account_number = models.BigIntegerField(validators=[RegexValidator(r'^\d{10}$', 'Enter a valid 10 digit account number.')])
     balance = models.DecimalField(max_digits=15, decimal_places=2)
-
+    def __str__(self):
+        return self.account_name
 
 #Create class InsuranceProducts
 class InsuranceProducts(models.Model):
@@ -31,7 +32,8 @@ class InsuranceProducts(models.Model):
     price = models.DecimalField(max_digits=10, decimal_places=2)
     coverage = models.CharField(max_length=200)
     photo_url = models.TextField(default='unknown')
-
+    def __str__(self):
+        return self.product_name
 #Create class Recives
 class Recives(models.Model):
     created_at = models.DateTimeField(default=timezone.now)

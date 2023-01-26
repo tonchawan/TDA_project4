@@ -26,7 +26,7 @@ class User(AbstractUser):
     last_name = models.CharField(verbose_name='Last Name', max_length=200,        null=True)
     gender = models.BooleanField(null=True)
     date_of_birth = models.DateField(null=True)
-    user_Identity = models.BigIntegerField(validators=[RegexValidator(r'^\d{14}$', 'Enter a valid 14 digit account number.')] ,null=True)
+    user_Identity = models.BigIntegerField(validators=[RegexValidator(r'^\d{13}$', 'Enter a valid 13 digit account number.')] ,null=True)
     
     object =CustomUserManager()
     # USERNAME_FIELD = 'email'

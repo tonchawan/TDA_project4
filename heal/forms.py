@@ -12,4 +12,4 @@ class AccountForm(forms.ModelForm):
 class ReciveForm(forms.ModelForm):
     class Meta:
         model = Recives
-        fields = ('account', 'insurance_product', 'recive_date', 'recive_amount')
+        fields = ('account', 'insurance_product', 'recive_amount')
