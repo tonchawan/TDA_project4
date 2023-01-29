@@ -2,11 +2,11 @@
 
 {% block content %}
 
-<h2>Recives <a href="">(+)</a></h2>
-<ul>
+<h2 class="recive">Recives <a class="recive" href="">(+)</a></h2>
+<ul class="recive">
   {% for recive in recives %}
-  <li>
-    <a href="">{{ recive.recive_number }}</a>
+  <li class="recive">
+    {{ recive.recive_number }}
   </li>
   {% endfor %}
 </ul>

@@ -2,15 +2,15 @@
 
 {% block content %}
 
-<h2>Product </h2>
+<h2 class="product">Product </h2>
 
-<ul>
+<ul class="product">
   {% for insuranceproduct in insuranceproducts %}
-  <li>
+  <li class="product">
     <a href="{% url 'product_detail' pk=insuranceproduct.pk %}">
-    <!-- <div class="product-photo" >
-      <img src="{{ insuranceproduct.photo_url }}" alt="" />
-    </div> -->
+    <div class="product-photo" >
+      <img src="{{ insuranceproduct.photo_url }}" alt="" class="product"/>
+    </div class="product">
     {{ insuranceproduct.product_name }}</a>
   </li>
   {% endfor %}

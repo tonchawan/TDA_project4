@@ -2,11 +2,11 @@
 
 {% block content %}
 
-<h2>Account <a href="">(+)</a></h2>
-<ul>
+<h2 class ="accounts">Account <a href="">(+)</a></h2>
+<ul class ="accounts" >
   {% for account in accounts %}
-  <li>
-    <a href="{% url 'account_detail' pk=account.pk %}">{{ account.account_name}}, {{ account.user_name }}</a>
+  <li class ="accounts" >
+    <a class ="accounts" href="{% url 'account_detail' pk=account.pk %}">{{ account.account_name}}, {{ account.user_name }}</a>
   </li>
   {% endfor %}
 </ul>

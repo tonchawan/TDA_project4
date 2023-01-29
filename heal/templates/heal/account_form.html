@@ -2,8 +2,8 @@
 
 {% block content %}
 
-  <h2>Create a new account</h2>
-  <form method="post">
+  <h2 class="account-form">Create a new account</h2>
+  <form class="account-form"  method="post">
     {% csrf_token %}
     {{ form.as_p }}
     <input type="submit" value="Create account">

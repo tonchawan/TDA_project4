@@ -2,10 +2,10 @@
 
 {% block content %}
 
-<h2>User <a href="">(+)</a></h2>
-<ul>
+<h2 class"users" >User <a href="">(+)</a></h2>
+<ul class"users">
   {% for user in users %}
-  <li>
+  <li class"users" >
     <a href="{% url 'user_detail' pk=user.pk %}">{{ user.username }}</a>
   </li>
   {% endfor %}

@@ -3,10 +3,10 @@
 {% block content %}
 
   <h1>Buy a product</h1>
-  <form method="post">
+  <form class="recive-form" method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <input type="submit" value="Submit" onclick="alert('Thankyou for your' )">
+    <input class="recive-form" type="submit" value="Submit" onclick="alert('Thankyou for your purchases' )">
   </form>
 
   {% endblock %}
