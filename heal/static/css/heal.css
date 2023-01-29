@@ -1,82 +1,28 @@
-header{
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1;
-    padding: 20px ;
-    background-color: #f5f5f5;
-    
-}
-
-main {
-    padding-top: 80px; /* adjust as needed for header */
-    padding-bottom: 80px; /* adjust as needed for footer */
-  }
-
+/* Global styles */
 body {
     font-family: Arial, sans-serif;
-    background-color: #b5a256f6;
-}
-
-h2 {
-    text-align: center;
-    margin-top: 50px;
-    margin-bottom: 30px;
-}
-
-ul {
-    list-style-type: none; /* remove bullet points from the list */
-    margin: 0; /* remove margins */
-    padding: 0; /* remove padding */
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-bottom: 50px;
-}
-
-li {
-    margin: 10px 0; /* add a margin of 10px to the top and bottom of each list item */
-    padding: 10px; /* add padding of 10px to each list item */
-    background-color: #f0f0f0; /* set the background color of each list item */
-    border-radius: 5px; /* add rounded corners to each list item */
-    width: 300px;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+  }
+  
+  /* Header styles */
+  header {
+    background-color: #333;
+    color: #fff;
     padding: 20px;
-    margin: 10px;
-    background-color: #fff;
-    box-shadow: 0px 0px 10px #ccc;
     text-align: center;
-}
+  }
+  
+  header h1 {
+    margin: 0;
+  }
 
-a {
-    color: #333; /* set the color of the links to dark gray */
-    text-decoration: none; /* remove underlines from the links */
-}
-
-a:hover {
-    color: #00a85a;
-}
-nav {
+  nav {
     display: grid;
     justify-content: start;
     position: relative; /* add position relative */
 }
-
-.product-photo{
-    max-width: 60;
-    max-height: 20;
-}
-
-
-
-footer {
-    background-color: #222;
-    color: #fff;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
-
 .dropdown {
     position: absolute; 
     top: 20px;
@@ -100,10 +46,272 @@ footer {
     display: block;
   }
 
-  
-
-@media (max-width: 800px){
-    nav{
-        flex-direction: column;
-    }
+  footer {
+    background-color: #333;
+    color: #fff;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
+  /* Users view styles */
+  .users {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 20px 0;
+  }
+  
+  .users li {
+    background-color: #fff;
+    border: 1px solid #333;
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+    width: 300px;
+  }
+  
+  .users a {
+    color: #333;
+    text-decoration: none;
+  }
+  
+  /* User detail styles */
+  .user-detail {
+    background-color: #fff;
+    border: 1px solid #333;
+    padding: 20px;
+    text-align: center;
+    width: 600px;
+    margin: 0 auto;
+  }
+  
+  /* Receive styles */
+  .recive {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 20px 0;
+  }
+  
+  .recive li {
+    background-color: #fff;
+    border: 1px solid #333;
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+    width: 300px;
+  }
+  
+  .recive a {
+    color: #333;
+    text-decoration: none;
+  }
+  
+  /* Receive form styles */
+  .recive-form {
+    background-color: #fff;
+    border: 1px solid #333;
+    padding: 20px;
+    text-align: center;
+    width: 600px;
+    margin: 0 auto;
+  }
+  
+  /* Product styles */
+  .product {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 20px 0;
+  }
+  
+  .product li {
+    background-color: #fff;
+    border: 1px solid #333;
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+    width: 280px;
+  }
+  
+  .product a {
+    color: #333;
+    text-decoration: none;
+  }
+  
+  .product-photo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .product-photo img {
+    
+    height: 200px;
+  }
+
+/* Product detail page */
+
+.product-detail {
+    text-align: center;
+    font-size: 1.5em;
+  }
+  
+  #product-detail-header {
+    width: 500px;
+    height: 500px;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .product-detail a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    border-radius: 4px;
+  }
+  
+  .product-detail button {
+    margin-top: 20px;
+  }
+
+
+
+  /* Accounts page */
+.accounts {
+    font-size: 20px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .accounts a {
+    color: black;
+    text-decoration: none;
+    margin-right: 10px;
+  }
+  
+  .accounts h2 {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Account detail page */
+  .account-detail {
+    font-size: 20px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .account-detail h2 {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+ /* Common styles */
+.button {
+    background-color: #2199e8;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+  }
+ 
+  
+  /* Login Template */
+  .login input[type="submit"] {
+    width: 100px;
+    height: 30px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  .login p {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .login a {
+    color: blue;
+    text-decoration: underline;
+  }
+  
+    
+  /* Logout Template */
+
+  .log-out {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .log-out a {
+    color: blue;
+    text-decoration: underline;
+  }
+  
+  .log-out a.button {
+    width: 200px;
+    height: 30px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+    text-align: center;
+    text-decoration: none;
+  }
+  
+  .login {
+    width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    text-align: center;
+  }  
+  
+  /* Signup Template */
+  
+  .signup {
+    width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  .signup input[type="submit"] {
+    width: 100px;
+    height: 30px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  

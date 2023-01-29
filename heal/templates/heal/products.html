@@ -8,17 +8,12 @@
   {% for insuranceproduct in insuranceproducts %}
   <li class="product">
     <a href="{% url 'product_detail' pk=insuranceproduct.pk %}">
-    <div class="product-photo" >
+    <div class="product-photo">
       <img src="{{ insuranceproduct.photo_url }}" alt="" class="product"/>
-    </div class="product">
+    </div>
     {{ insuranceproduct.product_name }}</a>
   </li>
   {% endfor %}
 </ul>
-
-<!-- Three.js canvas -->
-<canvas id="myCanvas"></canvas>
-
-
 
 {% endblock %}

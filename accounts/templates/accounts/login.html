@@ -3,20 +3,21 @@
 {% block content %} 
 
 {% if form.errors %}
-<p>Your username and password do not match. Please try again.</p>
+  <p class="login">Your username and password do not match. Please try again.</p>
 {% endif %}
 
-  {% if next %}
-      <p>Please login to see this page.</p>
-  {% endif %}
+{% if next %}
+  <p class="login">Please login to see this page.</p>
+{% endif %}
 
-<form method="post" action="{% url 'login' %}">
+<form class="login" method="post" action="{% url 'login' %}">
   {% csrf_token %} {{form.as_p}}
 
-  <input type="submit" value="Login" />
-  <input type="hidden" name="next" value="{{ next }}" />
+  <input class="login button" type="submit" value="Login" />
+  <input class="login" type="hidden" name="next" value="{{ next }}" />
 </form>
 
-If your are Don't have account please <a href="{% url 'signup' %}">Signup</a>
+<p class="login">If your are Don't have account please <a class="login" href="{% url 'signup' %}">Signup</a></p>
+
 
 {% endblock %}

@@ -2,9 +2,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% block title %}Heal{% endblock %}</title>
   <link rel="stylesheet" type="text/css" href="{% static 'css/heal.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'css/account.css' %}">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha384-AA7Y5IAEb5v5v5q5q3q5q5i5jK2QxhO5b1R0R48Ug+WQeN6UiLHU0X9nAK/xUPCA" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha384-S7YB+cKjd0GKiHWO4hL6U9i0GOM+/PdzglwD/I1/zM1/QQcT/n/nUPrB9k9P6UvA" crossorigin="anonymous"></script>
 </head>
 <body>
   <header>
@@ -14,7 +17,10 @@
         User
         <div  class="dropdown-content">
           
-          {% if user.is_authenticated %} Welcome, <a href="{% url 'user_detail' pk=user.pk %}">{{ user.username }}</a>
+          {% if user.is_authenticated %} Welcome 
+          <br />
+          <a href="{% url 'user_detail' pk=user.pk %}">{{ user.username }}</a>
+          <br />
           <a href="{% url 'logout' %}" >Log out</a>
           {% else %}
           <a href="{% url 'login' %}">Login</a>
@@ -31,5 +37,9 @@
   <footer>
     <p>Copyright © {{ year }}</p>
   </footer>
+
+  <script>
+    $(document).foundation();
+  </script>
 </body>
 </html>
