@@ -11,23 +11,23 @@
 </head>
 <body>
   <header>
-    <nav class="top-nav">
+    <nav >
       <div class="nav-content">
         <a id="home-nav" href="{% url 'insuranceproducts_view' %}">Home</a>
-        <div class="dropdown">
-          User
-          <div class="dropdown-content">
-            {% if user.is_authenticated %} Welcome
-            <br />
-            <a href="{% url 'user_detail' pk=user.pk %}">{{ user.username }}</a>
-            <br />
-            <a href="{% url 'logout' %}">Log out</a>
-            {% else %}
-            <a href="{% url 'login' %}">Login</a>
-            <a href="{% url 'signup' %}">Signup</a>
-          </div>
-          {% endif %}
+      </div>
+      <div  class="dropdown">
+        User
+        <div  class="dropdown-content">
+          {% if user.is_authenticated %} Welcome
+          <br />
+          <a href="{% url 'user_detail' pk=user.pk %}">{{ user.username }}</a>
+          <br />
+          <a href="{% url 'logout' %}">Log out</a>
+          {% else %}
+          <a href="{% url 'login' %}">Login</a>
+          <a href="{% url 'signup' %}">Signup</a>
         </div>
+        {% endif %}
       </div>
     </nav>
   </header>
