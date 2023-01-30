@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<h2 class= "user-detail">{{ user.name }} <a  class= "user-detail" href="">(edit)</a></h2>
+<h4 class= "user-detail">{{ user.name }} <a  class= "user-detail" href="{% url 'user_update' pk=user.pk %}" >(edit)</a></h4>
 <h4 class= "user-detail">Email: {{ user.email }}</h4>
 <h4 class= "user-detail">First Name: {{ user.first_name }}</h4>
 <h4 class= "user-detail">Last Name: {{ user.last_name }}</h4>

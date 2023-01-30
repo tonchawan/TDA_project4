@@ -1,0 +1,10 @@
+{% extends "heal/base.html" %} {% block content %}
+
+<form class="user-form" method="post" action="{% url 'user' %}">
+  {% csrf_token %} {{form.as_p}}
+
+  <input class="user-form-button" type="submit" value="confirm" />
+  <input class="user-form" type="hidden" name="next" value="{{ next }}" />
+</form>
+
+{% endblock %}

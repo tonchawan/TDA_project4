@@ -13,4 +13,6 @@ urlpatterns = [
 
     # Sign Up
     path('accounts/signup', views.sign_up, name="signup"),
+
+    path('user/<int:pk>/update', views.user_update, name='user_update'),
 ]

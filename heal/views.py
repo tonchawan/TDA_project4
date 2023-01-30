@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect
 from .models import Accounts, InsuranceProducts, Recives
 from accounts.models import User
 from .forms import AccountForm, ReciveForm
+from accounts.form import UserForm
 
 
 # Create your views here.
@@ -75,7 +76,6 @@ def account_create(request):
     return render(request, 'heal/account_form.html', {'form': form})
 
 #Create recive
-# @login_required
 def product_buy(request, product_id):
     if request.method == 'POST':
         form = ReciveForm(request.POST)
@@ -98,7 +98,7 @@ def account_update(request, pk ):
             account = form.save()
             return redirect('accounts_view', pk =account.pk)
         else:
-            form = ReciveForm()
+            form = AccountForm(instance=account)
         return render(request, 'heal/account_form.html', {'form':form})
 
 # Edit Recive
@@ -111,8 +111,23 @@ def recive_update(request, pk ):
             recive = form.save()
             return redirect('recives_view', pk =recive.pk)
         else:
-            form = ReciveForm()
+            form = ReciveForm(instance=recive)
         return render(request, 'heal/recive_form.html', {'form':form})
+
+# Edit User
+def user_update(request, pk ):
+    user = User.objects.get(id=pk)
+    if request.method == "POST":
+        form = UserForm(request.POST, instance=user)
+        if form.is_valid():
+            user = form.save()
+            return redirect('user_detail', pk =user.pk)
+        else:
+            form = UserForm(instance=user)
+        return render(request, 'heal/user_form.html', {'form':form})
+
+
+
 
 
 # Deleate Account
