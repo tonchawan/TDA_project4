@@ -6,28 +6,26 @@ body {
     background-color: #f2f2f2;
   }
   
-  /* Header styles */
-  header {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-  }
-  
-  header h1 {
-    margin: 0;
-  }
-
-  nav {
-    display: grid;
-    justify-content: start;
-    position: relative; /* add position relative */
+/* Header styles */
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
 }
+
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .dropdown {
-    position: absolute; 
-    top: 20px;
-    right: 50px; 
-    display: inline-block;
+  display: inline-block;
+}
+
+#home-nav {
+  margin-right: auto;
 }
   
   .dropdown-content {
