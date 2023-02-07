@@ -17,14 +17,15 @@ def sign_up(request):
         form = UserForm()
     return render(request, 'accounts/signup.html', {'form': form})
 
-
-def user_update(request, pk ):
-    account = User.objects.get(id=pk)
+# Edit User
+def user_update(request, pk):
+    user = User.objects.get(id=pk)
     if request.method == "POST":
-        form = User(request.POST, instance=account)
+        form = UserForm(request.POST, instance=user)
         if form.is_valid():
-            account = form.save()
-            return redirect('user_detail', pk =account.pk)
-        else:
-            form = User(instance= account)
-        return render(request, 'account/user_detail.html', {'form':form})
+            user = form.save()
+            return redirect('/', pk=user.pk)
+    else:
+        form = UserForm(instance=user)
+    return render(request, 'heal/user_form.html', {'form': form})
+

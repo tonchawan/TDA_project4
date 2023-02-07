@@ -2,23 +2,18 @@
 
 {% block content %}
 
-</h2>Product detail</>
-<img id="product-detail-header" class="product-detail" src="{{ product.photo_url }}" alt="" class="product-photo-detail" />
+<h1>Product detail</h1>
+{% comment %} <img id="product-detail-header" src="{{ product.photo_url }}" alt="{{ product.product_name }}" /> {% endcomment %}
 <p class="product-detail">Product name: {{ product.product_name }}</p>
 <p class="product-detail">Product Detail: {{ product.coverage }}</p>
-<p class="product-detail">Price: {{ product.price }}</p>
+<p class="product-detail">Price: {{ product.price }} Bath</p>
 {% if user.is_authenticated %}
-<button class="product-detail" >
-    <a class="product-detail" href="{% url 'product_buy' product_id=product.pk %}">Buy</a>
-</button>
-    {% else %}
-    <p class="product-detail" >Please log in to buy the product</p>
-    <button class="product-detail" >
-        <a class="product-detail" href="{% url 'login' %}">Login</a>
-    </button>
-
-    {% comment %} {% url 'product_buy' product_id=product.pk %} {% endcomment %}
-    {% endif %}
-    
-
+<p class="product-detail">
+  <a href="{% url 'product_buy' product_id=product.pk %}">Buy</a>
+</p>
+{% else %}
+<p class="product-detail">Please log in to buy the product
+  <a href="{% url 'login' %}">Login</a>
+</p>
+{% endif %}
 {% endblock %}

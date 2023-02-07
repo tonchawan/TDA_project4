@@ -11,7 +11,7 @@ body {
 header {
   background-color: #333;
   color: #fff;
-  padding: 70px;
+  padding: 20px;
   text-align: center;
 }
 
@@ -51,12 +51,12 @@ nav.top-nav #home-nav {
 }
 
 footer {
-  background-color: #333;
+  background-color: rgb(255, 0, 0);
   color: #fff;
   position: fixed;
   bottom: 0;
   width: 100%;
-  padding: 20px;
+  padding: 10px;
   text-align: center;
 }
 
@@ -163,30 +163,22 @@ footer {
     height: 200px;
   }
 
-/* Product detail page */
-
-.product-detail {
-    text-align: center;
-    font-size: 1.5em;
-  }
-  
   #product-detail-header {
-    width: 500px;
-    height: 500px;
+    width: 100%;
+    height: auto;
     display: block;
     margin: 0 auto;
   }
-  
-  .product-detail a {
-    color: white;
-    text-decoration: none;
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    border-radius: 4px;
+  .product-detail {
+    text-align: center;
+    margin: 20px 0;
   }
-  
-  .product-detail button {
-    margin-top: 20px;
+  .product-detail a {
+    text-decoration: none;
+    color: #fff;
+    background-color: #333;
+    padding: 10px 20px;
+    border-radius: 5px;
   }
 
 
@@ -242,27 +234,52 @@ footer {
  
   
   /* Login Template */
-  .login input[type="submit"] {
-    width: 100px;
-    height: 30px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 20px;
-  }
-  
-  .login p {
+  .login-form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    }
+    
+    .login-form {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #ccc;
+    background-color: #fff;
+    max-width: 500px;
+    width: 100%;
     text-align: center;
+    }
+    
+    .error-message {
+    color: #ff0000;
+    margin-bottom: 10px;
+    }
+    
+    .message {
+    margin-bottom: 20px;
+    }
+    
+    .login-button {
     margin-top: 20px;
-  }
-  
-  .login a {
-    border-radius: 2px;
-    color: #4CAF50;
-    text-decoration: underline;
-  }
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: #fff;
+    cursor: pointer;
+    }
+    
+    .additional-message {
+    margin-top: 20px;
+    }
+    
+    .signup-link {
+    color: #0077ff;
+    }
   
     
   /* Logout Template */
@@ -297,29 +314,38 @@ footer {
     margin: 0 auto;
     padding: 20px;
     border: 1px solid gray;
-    border-radius: 10px;
+    border-radius: 1px;
     text-align: center;
   }  
   
   /* Signup Template */
   
+
+
+  .form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
   .signup {
-    width: 500px;
-    margin: 0 auto;
+    background-color: #fff;
+    border: 1px solid #ddd;
     padding: 20px;
-    border: 1px solid gray;
-    border-radius: 10px;
+    box-shadow: 0px 0px 20px 0px #ddd;
     text-align: center;
+    width: 400px;
   }
-  
-  .signup input[type="submit"] {
-    width: 100px;
-    height: 30px;
-    background-color: #4CAF50;
-    color: white;
+  .signup .button {
+    display: block;
+    margin: 20px auto 0;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 4px;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
-    margin-top: 20px;
   }
-  
+  .signup .button:hover {
+    background-color: #0069d9;
+  }

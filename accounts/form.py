@@ -10,7 +10,8 @@ class UserForm(forms.ModelForm):
             'username', 
             'password', 
             'first_name', 
-            'last_name', 
+            'last_name',
+            'email', 
             'gender', 
             'date_of_birth',
             'user_Identity')

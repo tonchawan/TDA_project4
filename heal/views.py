@@ -70,7 +70,7 @@ def account_create(request):
         form = AccountForm(request.POST)
         if form.is_valid():
             account = form.save()
-            return redirect('accounts_view')
+            return redirect('/')
     else:
         form = AccountForm()
     return render(request, 'heal/account_form.html', {'form': form})
@@ -83,7 +83,7 @@ def product_buy(request, product_id):
             recive = form.save(commit=False)
             recive.insurance_product_id = product_id
             recive.save()
-            return redirect('product_view')
+            return redirect('/')
     else:
         form = ReciveForm()
     return render(request, 'heal/recive_form.html', {'form': form})
@@ -93,7 +93,7 @@ def product_buy(request, product_id):
 def account_update(request, pk ):
     account = Accounts.objects.get(id=pk)
     if request.method == "POST":
-        form = AccountForm(request.POST, instance=account)
+        form = AccountForm(request.PUT, instance=account)
         if form.is_valid():
             account = form.save()
             return redirect('accounts_view', pk =account.pk)
@@ -109,22 +109,22 @@ def recive_update(request, pk ):
         form = ReciveForm(request.POST, instance=recive)
         if form.is_valid():
             recive = form.save()
-            return redirect('recives_view', pk =recive.pk)
+            return redirect('/', pk =recive.pk)
         else:
             form = ReciveForm(instance=recive)
         return render(request, 'heal/recive_form.html', {'form':form})
 
 # Edit User
-def user_update(request, pk ):
+def user_update(request, pk):
     user = User.objects.get(id=pk)
     if request.method == "POST":
         form = UserForm(request.POST, instance=user)
         if form.is_valid():
             user = form.save()
-            return redirect('user_detail', pk =user.pk)
-        else:
-            form = UserForm(instance=user)
-        return render(request, 'heal/user_form.html', {'form':form})
+            return redirect('/', pk=user.pk)
+    else:
+        form = UserForm(instance=user)
+    return render(request, 'heal/user_form.html', {'form': form})
 
 
 
@@ -134,11 +134,11 @@ def user_update(request, pk ):
 
 def account_delete(request, pk):
     Accounts.objects.get(id=pk).delete()
-    return redirect('users_view')
+    return redirect('/')
 
 # Deleate Recive
 
 def recive_delete(request, pk):
     Recives.objects.get(id=pk).delete()
-    return redirect('heal/recive_view')
+    return redirect('/')
 

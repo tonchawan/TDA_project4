@@ -10,7 +10,9 @@
 
 <h4 class= "user-detail" >Accounts</h4>
 <ul class= "user-detail" >
-  {% for account in user.accounts.all %}
+
+  <a href="{% url 'account_form' %}">Add Account</a>
+  {% for account in user.accounts_set.all %}
   <li class= "user-detail">
     <a class= "user-detail" href="{% url 'account_detail' pk=account.pk %}">{{ account.account_name}}, {{ account.account_number}}</a>
     <a class= "user-detail" href="{% url 'account_delete' pk=account.pk %}">DELETE</a>

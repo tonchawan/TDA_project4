@@ -1,3 +1,4 @@
+from datetime import datetime
 import uuid
 from django.utils import timezone
 from django.db import models
@@ -40,5 +41,5 @@ class Recives(models.Model):
     recive_number = models.CharField(max_length=36, default=uuid.uuid4, editable=False)
     account = models.ForeignKey(Accounts, on_delete=models.CASCADE ,related_name="recives_accout")
     insurance_product = models.ForeignKey(InsuranceProducts, on_delete=models.CASCADE ,related_name="recive_insure")
-    recive_date = models.DateTimeField()
+    recive_date = models.DateTimeField(default=datetime.now)
     recive_amount = models.DecimalField(max_digits=10, decimal_places=2)
